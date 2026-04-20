@@ -8,8 +8,7 @@
 ```
 $ aws --version
 
-[Paste your output here]
-```
+aws-cli/2.34.25 Python/3.14.3 Windows/11 exe/AMD64```
 
 ---
 
@@ -17,8 +16,11 @@ $ aws --version
 ```
 $ aws configure list
 
-[Paste your output here]
-```
+NAME       : VALUE                    : TYPE             : LOCATION
+profile    : <not set>                : None             : None
+access_key : ****************OG6F     : shared-credentials-file :
+secret_key : ****************ByjW     : shared-credentials-file :
+region     : eu-west-1                : config-file      : ~/.aws/config```
 
 ---
 
@@ -26,8 +28,11 @@ $ aws configure list
 ```
 $ aws sts get-caller-identity
 
-[Paste your output here]
-```
+{
+    "UserId": "AIDARPJHLATRIP4LIQOTA",
+    "Account": "101551113442",
+    "Arn": "arn:aws:iam::101551113442:user/Dieciocho"
+}```
 
 ---
 
@@ -44,16 +49,41 @@ $ aws ec2 describe-regions --output table
 ```
 $ aws configure get region
 
-[Paste your output here]
-```
+-------------------------------------------------------
+|                   DescribeRegions                   |
++-----------------------------------------------------+
+||                      Regions                      ||
+|+---------------+-----------------------------------+|
+||  Endpoint     |  ec2.ap-south-1.amazonaws.com     ||
+||  OptInStatus  |  opt-in-not-required              ||
+||  RegionName   |  ap-south-1                       ||
+|+---------------+-----------------------------------+|
+|||                    Geography                    |||
+||+----------------------+--------------------------+||
+|||  Name                |  India                   |||
+||+----------------------+--------------------------+||
+||                      Regions                      ||
+|+---------------+-----------------------------------+|
+||  Endpoint     |  ec2.eu-north-1.amazonaws.com     ||
+||  OptInStatus  |  opt-in-not-required              ||
+||  RegionName   |  eu-north-1                       ||
+|+---------------+-----------------------------------+|
+|||                    Geography                    |||
+||+---------------------+---------------------------+||
+|||  Name               |  Sweden                   |||
+||+---------------------+---------------------------+||
+||                      Regions                      ||
+|+---------------+-----------------------------------+|
+||  Endpoint     |  ec2.eu-west-3.amazonaws.com      ||
+||  OptInStatus  |  opt-in-not-required              ||
+-- Más  --```
 
 ---
 
 ## Command 6: List S3 Buckets
 ```
 $ aws s3 ls
-
-[Paste your output here]
+EMPTY 
 ```
 
 ---
@@ -62,8 +92,30 @@ $ aws s3 ls
 ```
 $ aws ec2 describe-instance-types --query 'InstanceTypes[?contains(InstanceType, `t2`) || contains(InstanceType, `t3`)].InstanceType' --output table
 
-[Paste your output here]
-```
+|DescribeInstanceTypes|
++---------------------+
+|  t2.2xlarge         |
+|  t3.2xlarge         |
+|  t3a.2xlarge        |
+|  t2.micro           |
+|  t3.large           |
+|  t3.xlarge          |
+|  t3.medium          |
+|  t3a.medium         |
+|  t2.large           |
+|  t3a.small          |
+|  t3.micro           |
+|  t3.nano            |
+|  t2.medium          |
+|  t3a.large          |
+|  t2.xlarge          |
+|  t2.nano            |
+|  t3a.nano           |
+|  t3.small           |
+|  t2.small           |
+|  t3a.micro          |
+|  t3a.xlarge         |
++---------------------+```
 
 ---
 
@@ -71,8 +123,35 @@ $ aws ec2 describe-instance-types --query 'InstanceTypes[?contains(InstanceType,
 ```
 $ aws iam get-account-summary
 
-[Paste your output here]
-```
+{
+    "SummaryMap": {
+        "GroupPolicySizeQuota": 5120,
+        "InstanceProfilesQuota": 1000,
+        "Policies": 0,
+        "GroupsPerUserQuota": 10,
+        "InstanceProfiles": 0,
+        "AttachedPoliciesPerUserQuota": 10,
+        "Users": 2,
+        "PoliciesQuota": 1500,
+        "Providers": 0,
+        "AccountMFAEnabled": 1,
+        "AccessKeysPerUserQuota": 2,
+        "AssumeRolePolicySizeQuota": 2048,
+        "PolicyVersionsInUseQuota": 10000,
+        "GlobalEndpointTokenVersion": 1,
+        "VersionsPerPolicyQuota": 5,
+        "AttachedPoliciesPerGroupQuota": 10,
+        "PolicySizeQuota": 6144,
+        "Groups": 0,
+        "AccountSigningCertificatesPresent": 0,
+        "UsersQuota": 5000,
+        "ServerCertificatesQuota": 20,
+        "MFADevices": 1,
+        "UserPolicySizeQuota": 2048,
+        "PolicyVersionsInUse": 4,
+        "ServerCertificates": 0,
+        "Roles": 3,
+        "RolesQuota": 1000,```
 
 ---
 
